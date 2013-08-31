@@ -19,14 +19,14 @@
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
-          <% products_array.each do |product|%>
-        <ul class="products">
-            <li><%= product["name"] %></li>
-            <li><%= product["price_in_cents"].to_i/100.00 %></li>
-            <li><%= product["primary_category"] %></li>
-            <li><%= product["secondary_category"] %></li>
-            <li><%= product["origin"] %></li>
-            <img src="<%= product["image_thumb_url"] %>">
+          <% stores.each do |store|%>
+        <ul class="stores">
+            <li><%= store["name"] %></li>
+            <li><%= store["address_line_1"] %></li>
+            <li><%= store["city"] %></li>
+            <li><%= store["postal_code"] %></li>
+            <li>Total Dollar Value of Inventory:<%=store["inventory_volume_in_milliliters"]/100.00%></li>
+            <li>Liters of Alcohol in Store:<%=store["inventory_price_in_cents"]/1000%></li>
         </ul>
         <% end %>
 

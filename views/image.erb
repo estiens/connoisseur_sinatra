@@ -15,20 +15,12 @@
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
-
-          <% products_array.each do |product|%>
-        <ul class="products">
-            <li><%= product["name"] %></li>
-            <li><%= product["price_in_cents"].to_i/100.00 %></li>
-            <li><%= product["primary_category"] %></li>
-            <li><%= product["secondary_category"] %></li>
-            <li><%= product["origin"] %></li>
-            <img src="<%= product["image_thumb_url"] %>">
-        </ul>
+        <% products_array.each do |product|%>
+        <img class="beer_thumbnail tiles.five_up" src="<%= product["image_thumb_url"] %>">
         <% end %>
+
+
+         
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
@@ -44,4 +36,5 @@
         </script>
     </body>
 </html>
- 
+
+

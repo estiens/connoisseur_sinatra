@@ -11,12 +11,17 @@
         <meta name="viewport" content="width=device-width">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <link rel="stylesheet" href="css/gumby.css">
+        <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="../bootstrap/css/prettify.css">
+        <link rel="stylesheet" href="../css/flat-ui.css">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
+    
     <body>
         <% products_array.each do |product|%>
-        <img class="beer_thumbnail tiles.five_up" src="<%= product["image_thumb_url"] %>">
+        
+        <img class="beer_thumbnail" src="<%= product["image_thumb_url"] %>">
+        
         <% end %>
 
 

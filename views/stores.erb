@@ -8,17 +8,31 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title></title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
-
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-            <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
-        <link rel="stylesheet" href="../bootstrap/css/prettify.css">
-        <link rel="stylesheet" href="../css/flat-ui.css">
+        <meta name="viewport" content="width=device-width"><!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="stylesheet" href="../css/style.css" type="text/css">
+        <link rel="stylesheet" href="../css/main.css" type="text/css">
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
+        <nav id="topnav">
+            <ul><li><a href="/stores/biggest">LARGEST</a></li><li><a href="/stores/smallest">SMALLEST</a></li><li><a href="../index">BACK</a></li>
+        </nav>
+
+            <header>
+            <h1>
+                LCBO API
+            </h1>
+        </header>
+        
+            
+         <!--    <nav id="mainmenu">
+                <button class="navbutton"><a href="/stores/smallest">Find the smallest liquor stores in Ontario!</button>
+                <button class="navbutton"><a href="/expensive/">See the most expensive liquor in the land!</a></button>
+                <button class="navbutton"><a href="/beercollage">See a beer collage!</a></button>
+                <button class="navbutton">Thrill at the most alcoholic beer!</button>
+            </nav> -->
 
           <% stores.each do |store|%>
         <ul class="stores">
@@ -26,8 +40,8 @@
             <li><%= store["address_line_1"] %></li>
             <li><%= store["city"] %></li>
             <li><%= store["postal_code"] %></li>
-            <li>Total Dollar Value of Inventory:<%=store["inventory_volume_in_milliliters"]/100.00%></li>
-            <li>Liters of Alcohol in Store:<%=store["inventory_price_in_cents"]/1000%></li>
+            <li>Total Dollar Value of Inventory: $<%=store["inventory_volume_in_milliliters"]/100.00%></li>
+            <li>Liters of Alcohol in Store: <%=store["inventory_price_in_cents"]/1000%></li>
         </ul>
         <% end %>
 

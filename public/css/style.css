@@ -1,0 +1,821 @@
+@import "http://fonts.googleapis.com/css?family=Glass+Antiqua";
+
+@import "http://fonts.googleapis.com/css?family=Habibi";
+/**
+ * Responsable Grid System
+ *
+ * Setting up a responsive grid based on Semantic GS
+ *
+ * @author Abban Dunne http://abandon.ie
+ * @author James Wilson http://jimmynotjim.com
+ * @version 0.9
+ */
+/* ========================================================== */
+/* = Site Variables                                         = */
+/* ========================================================== */
+/* Grid options */
+/**
+ * Baseline
+ * 
+ * Common settings for this:
+ * 
+ * 100% for 16px font and 24px baseline.
+ * 
+ * 75% for 12px font and 18px baseline.
+ * 
+ */
+/* Font variables */
+/* Link colors */
+/* Select colors */
+/* Default Colors */
+/* ========================================================== */
+/* = Import normalize baseline and grid                    = */
+/* ========================================================== */
+/*! normalize.css v2.0.1 | MIT License | git.io/normalize */
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+/*
+ * Corrects `block` display not defined in IE 8/9.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+  display: block;
+}
+/*
+ * Corrects `inline-block` display not defined in IE 8/9.
+ */
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+/*
+ * Prevents modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+/*
+ * Addresses styling for `hidden` attribute not present in IE 8/9.
+ */
+[hidden] {
+  display: none;
+}
+/* ==========================================================================
+   Base
+   ========================================================================== */
+/*
+ * 1. Sets default font family to sans-serif.
+ * 2. Prevents iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+
+}
+/*
+ * Removes default margin.
+ */
+body {
+  margin: 0;
+}
+/* ==========================================================================
+   Links
+   ========================================================================== */
+/*
+ * Addresses `outline` inconsistency between Chrome and other browsers.
+ */
+a:focus {
+  outline: thin dotted;
+}
+/*
+ * Improves readability when focused and also mouse hovered in all browsers.
+ */
+a:active,
+a:hover {
+  outline: 0;
+}
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+/*
+ * Addresses `h1` font sizes within `section` and `article` in Firefox 4+,
+ * Safari 5, and Chrome.
+ */
+h1 {
+  font-size: 2em;
+}
+/*
+ * Addresses styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+/*
+ * Addresses style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+b,
+strong {
+  font-weight: bold;
+}
+/*
+ * Addresses styling not present in Safari 5 and Chrome.
+ */
+dfn {
+  font-style: italic;
+}
+/*
+ * Addresses styling not present in IE 8/9.
+ */
+mark {
+  background: #ff0;
+  color: #000;
+}
+/*
+ * Corrects font family set oddly in Safari 5 and Chrome.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+}
+/*
+ * Improves readability of pre-formatted text in all browsers.
+ */
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+/*
+ * Sets consistent quote types.
+ */
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+/*
+ * Addresses inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+/*
+ * Prevents `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+/*
+ * Removes border when inside `a` element in IE 8/9.
+ */
+img {
+  border: 0;
+}
+/*
+ * Corrects overflow displayed oddly in IE 9.
+ */
+svg:not(:root) {
+  overflow: hidden;
+}
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+/*
+ * Addresses margin not present in IE 8/9 and Safari 5.
+ */
+figure {
+  margin: 0;
+}
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+/*
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+/*
+ * 1. Corrects color not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+legend {
+  border: 0;
+  /* 1 */
+
+  padding: 0;
+  /* 2 */
+
+}
+/*
+ * 1. Corrects font family not being inherited in all browsers.
+ * 2. Corrects font size not being inherited in all browsers.
+ * 3. Addresses margins set differently in Firefox 4+, Safari 5, and Chrome
+ */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+
+  font-size: 100%;
+  /* 2 */
+
+  margin: 0;
+  /* 3 */
+
+}
+/*
+ * Addresses Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+button,
+input {
+  line-height: normal;
+}
+/*
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Corrects inability to style clickable `input` types in iOS.
+ * 3. Improves usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+
+  cursor: pointer;
+  /* 3 */
+
+}
+/*
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+input[disabled] {
+  cursor: default;
+}
+/*
+ * 1. Addresses box sizing set to `content-box` in IE 8/9.
+ * 2. Removes excess padding in IE 8/9.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+
+  padding: 0;
+  /* 2 */
+
+}
+/*
+ * 1. Addresses `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Addresses `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+
+  box-sizing: content-box;
+}
+/*
+ * Removes inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+/*
+ * Removes inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+/*
+ * 1. Removes default vertical scrollbar in IE 8/9.
+ * 2. Improves readability and alignment in all browsers.
+ */
+textarea {
+  overflow: auto;
+  /* 1 */
+
+  vertical-align: top;
+  /* 2 */
+
+}
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+/*
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/**
+ * Baseline Grid to be layered on Normalize
+ *
+ * Makes elements consistent across browsers, sets up some decent
+ * default css styles and a baseline grid.
+ *
+ * @author Abban Dunne http://abandon.ie
+ * @author James Wilson http://jimmynotjim.com
+ * @version 1.1
+ */
+/* ========================================================== */
+/* = Box sizing makes life easier                           = */
+/* ========================================================== */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* ========================================================== */
+/* = Set up baseline                                        = */
+/* ========================================================== */
+html {
+  font-size: 100.01%;
+}
+body {
+  font-size: 100%;
+  color: #333333;
+  line-height: 1.5em;
+  font-family: "Open Sans", "Helvetica Neue", Arial, Helvetica, Sans-Serif;
+  text-shadow: 0 -1px 1px rgba(255, 255, 255, 0.01);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+::selection {
+  background: #78aace;
+  color: #ffffff;
+}
+::-moz-selection {
+  background: #78aace;
+  color: #ffffff;
+}
+img::selection {
+  background: transparent;
+}
+img::-moz-selection {
+  background: transparent;
+}
+body {
+  -webkit-tap-highlight-color: #78aace;
+}
+a {
+  color: #6bac60;
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  -o-transition: all .2s linear;
+  transition: all .2s linear;
+}
+a:hover,
+a:focus {
+  color: #78aace;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  font-family: "Helvetica Neue", Arial, Helvetica, Sans-Serif;
+  color: #111111;
+}
+h1 {
+  font-size: 3em;
+  line-height: 1;
+  padding-top: 0.53em;
+  margin-bottom: 0.5em;
+}
+h2 {
+  font-size: 2em;
+  padding-top: 0.25em;
+  margin-bottom: 0.5em;
+}
+h3 {
+  font-size: 1.5em;
+  line-height: 1;
+  padding-top: 0.35em;
+  margin-bottom: 0.65em;
+}
+h4 {
+  font-size: 1.2em;
+  line-height: 1.25;
+  padding-top: 0.45em;
+  margin-bottom: 0.8em;
+}
+h5 {
+  font-size: 1em;
+  font-weight: bold;
+  padding-top: 0.6em;
+  margin-bottom: 0.9em;
+}
+h6 {
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+figcaption {
+  font-size: small;
+  font-style: italic;
+  color: #666666;
+}
+ul,
+ol,
+dl {
+  margin: 0;
+  margin-bottom: 1.5em;
+}
+form {
+  margin-bottom: 1.5em;
+}
+form ul {
+  list-style-type: none;
+  list-style-image: none;
+  margin: 0;
+  padding: 0;
+}
+form ul li {
+  *zoom: 1;
+  margin-bottom: 1.5em;
+}
+form ul li:before,
+form ul li:after {
+  content: "";
+  display: table;
+}
+form ul li:after {
+  clear: both;
+}
+fieldset {
+  margin: 0;
+  padding: 1.5em;
+}
+label {
+  display: block;
+}
+label.inline {
+  display: inline;
+  padding-right: 24px;
+}
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 0px;
+  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  -ms-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+input[type="text"],
+input[type="url"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="tel"],
+textarea {
+  display: block;
+  width: 100%;
+  margin: 0 0 0.75em;
+  padding: 0.3em;
+  border: 1px solid #cccccc;
+  line-height: 1.5em;
+  font-family: "Open Sans", "Helvetica Neue", Arial, Helvetica, Sans-Serif;
+}
+select {
+  width: 100%;
+  height: 2.1em;
+  margin-bottom: 0.9em;
+  border: 1px solid #cccccc;
+  font-family: "Open Sans", "Helvetica Neue", Arial, Helvetica, Sans-Serif;
+}
+input[type="range"],
+input[type="color"] {
+  vertical-align: middle;
+  height: 1.5em;
+  width: 100%;
+  font-family: "Open Sans", "Helvetica Neue", Arial, Helvetica, Sans-Serif;
+}
+input[type="range"] {
+  height: 1.4em;
+}
+input[type="color"] {
+  width: 1.5em;
+  font-family: "Open Sans", "Helvetica Neue", Arial, Helvetica, Sans-Serif;
+}
+input[type="time"] {
+  margin: 0 0 0.55em;
+}
+progress,
+meter {
+  display: block;
+  width: 100%;
+  height: 1.5em;
+}
+input[type="submit"],
+input[type="button"] {
+  border: 1px solid #cccccc;
+  background: #ddd;
+  padding: 0.7em 2em;
+  margin: 0 20px 0 0;
+  font-family: "Open Sans", "Helvetica Neue", Arial, Helvetica, Sans-Serif;
+  line-height: 1.5em;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+}
+table {
+  margin-bottom: 1.4em;
+  width: 100%;
+  border: 1px solid #cccccc;
+}
+thead {
+  text-align: left;
+  font-weight: bold;
+}
+tbody tr:nth-child(even) td {
+  background: #dddddd;
+}
+tfoot {
+  font-style: italic;
+}
+tfoot td,
+tfoot th {
+  padding: .75em 10px;
+}
+th,
+td,
+caption {
+  border: 1px solid #cccccc;
+}
+td,
+th {
+  padding: 0 10px 0 10px;
+  line-height: 1.45em;
+}
+caption {
+  border-bottom: 0;
+  padding: .75em 10px;
+  line-height: 1.45em;
+  text-align: left;
+  font-style: italic;
+}
+p {
+  margin: 0 0 1.5em 0;
+}
+blockquote {
+  margin: 0 1.5em 1.5em;
+  font-style: italic;
+}
+mark {
+  line-height: 1.5;
+  background: #78aace;
+  color: #ffffff;
+}
+del {
+  color: #dddddd;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  line-height: 1.5;
+  margin: 0 0 1.5em 0;
+}
+ins,
+small {
+  line-height: 1.5;
+}
+kbd,
+samp {
+  line-height: 1.4;
+}
+hr {
+  background: #cccccc;
+  color: #cccccc;
+  clear: both;
+  float: none;
+  width: 100%;
+  height: 1px;
+  margin: 0 0 1.4em;
+  border: none;
+}
+/**
+ * Grid
+ *
+ * Set up responsive grid system.
+ * 
+ * This is heavily infleuenced by the Semantic Grid http://semantic.gs
+ *
+ * @author Abban Dunne http://abandon.ie
+ * @author James Wilson http://jimmynotjim.com
+ * @version 1.1
+ */
+/* Utility variable — you should never need to modify this */
+/* The micro clearfix http://nicolasgallagher.com/micro-clearfix-hack */
+/* Ensure grid columns are set to border-boxes. This is essential */
+/* Our row container */
+/* Our column container */
+/* Push adds left padding */
+/* Pull adds right padding */
+@import lesshat;
+/* ========================================================== */
+/* = Your custom styles go here                             = */
+/* ========================================================== */
+/*colors*/
+/*mixins*/
+.clear {
+  clear: both;
+}
+h1 {
+  font-size: 64px;
+  font-weight: 700;
+}
+h2 {
+  font-size: 48px;
+  font-weight: 700;
+}
+h3 {
+  font-size: 22px;
+  font-weight: 700;
+}
+h4 {
+  font-size: 18px;
+  font-weight: 700;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+a:hover {
+  color: #ffe9b3;
+}
+ul {
+  list-style-type: none;
+}
+#topnav ul {
+  position: fixed;
+  top: 0%;
+  height: 50px;
+  width: 100%;
+  margin: auto auto;
+  background-color: #252c18;
+}
+#topnav li {
+  width: 200px;
+  float: left;
+  padding: 10px;
+  margin-left: 10px;
+  color: #ffffff;
+}
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  background-color: #86906B;
+}
+header h1 {
+  margin-top: 40px;
+}
+#container {
+  width: 80%;
+  margin: auto auto;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 25px;
+  color: #000000;
+}
+#container a {
+  color: black;
+  text-decoration: underline;
+}
+#container a:hover {
+  color: #ffe9b3;
+}
+.productname {
+  font-size: 24px;
+  margin-bottom: 10px;
+  min-height: 70px;
+}
+.price {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.products,
+.stores {
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline;
+  float: left;
+  width: 41.66666666666667%;
+  padding: 0 25px;
+  *width: 36.70634920634921%;
+  *padding: 0 24.950396825396826px;
+  height: 220px;
+  margin: 25px;
+  padding: 25px;
+  color: white;
+}
+.category {
+  font-size: 16px;
+  width: 150px;
+  float: left;
+  padding: 10px;
+  margin: -105px 350px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  color: #000000;
+}
+.category2 {
+  font-size: 16px;
+  width: 150px;
+  float: left;
+  padding: 10px;
+  margin: -50px 350px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  color: #000000;
+}
+img.beer_thumbnail {
+  width: 150px;
+  float: left;
+  background-color: #000000;
+}
+header {
+  background-color: ;
+  color: #001400;
+  font-family: "Open Sans", Courier, serif;
+  width: 800px;
+  margin: auto;
+  text-align: center;
+  padding: 25px 0;
+}
+footer a:hover {
+  color: #fff3d4;
+}

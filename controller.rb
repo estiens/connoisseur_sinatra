@@ -8,13 +8,15 @@ class ProductQuery
     @@products_array=[]
   end
 
-  def index(criteria="normal")
+  def products(criteria="normal")
     if criteria == "normal"
       raw_response = RestClient.get("http://lcboapi.com/products?page=1&per_page=100&order=id.desc")
     elsif criteria == "expensive"
       raw_response = RestClient.get("http://lcboapi.com/products?page=1&per_page=100&order=price_in_cents.desc")
     elsif criteria == "cheap"
       raw_response = RestClient.get("http://lcboapi.com/products?page=1&per_page=100&order=price_in_cents.asc")
+    elsif criteria == "alcoholic"
+      raw_response = RestClient.get("http://lcboapi.com/products?page=1&per_page=100&order=alcohol_content.desc")
     end
 
     products = JSON.parse(raw_response)["result"]

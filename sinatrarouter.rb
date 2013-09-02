@@ -2,18 +2,31 @@ require_relative 'controller.rb'
 require 'sinatra'
 
 get '/' do
-  generator=ProductQuery.new
-  erb :index, :locals => {:products_array => generator.index}
+  erb :index
 end
 
-get '/expensive/' do
-  generator=ProductQuery.new
-  erb :index, :locals => {:products_array => generator.index("expensive")}
+get '/index' do
+  erb :index
 end
 
-get '/cheap/' do
+get '/products/' do
   generator=ProductQuery.new
-  erb :index, :locals => {:products_array => generator.index("cheap")}
+  erb :products, :locals => {:products_array => generator.products}
+end
+
+get '/products/expensive' do
+  generator=ProductQuery.new
+  erb :products, :locals => {:products_array => generator.products("expensive")}
+end
+
+get '/products/cheap' do
+  generator=ProductQuery.new
+  erb :products, :locals => {:products_array => generator.products("cheap")}
+end
+
+get '/products/alcoholic' do
+  generator=ProductQuery.new
+  erb :products, :locals => {:products_array => generator.products("alcoholic")}
 end
 
 get "/show/:id" do
@@ -36,7 +49,7 @@ get "/stores/smallest" do
   erb :stores, :locals => {:stores => generator.locations("smallest")}
 end
 
-get "/stores/:postal_code" do
+get "/nearby/:postal_code" do
   generator=StoreQuery.new
   erb :stores, :locals => {:stores => generator.nearby(params[:postal_code]) }
 end

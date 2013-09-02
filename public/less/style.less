@@ -1,0 +1,197 @@
+/**
+ * Responsable Grid System
+ *
+ * Setting up a responsive grid based on Semantic GS
+ *
+ * @author Abban Dunne http://abandon.ie
+ * @author James Wilson http://jimmynotjim.com
+ * @version 0.9
+ */
+
+/* ========================================================== */
+/* = Site Variables                                         = */
+/* ========================================================== */
+
+/* Grid options */
+@gutter_width: 50px; // Your gutter width
+@columns: 12; // The amount of columns you want
+@max_width: 1008px; // Set a maximum width of the site
+
+// Half the gutter for borders, margin, padding etc
+@gutter: @gutter_width*0.5;
+
+/**
+ * Baseline
+ * 
+ * Common settings for this:
+ * 
+ * 100% for 16px font and 24px baseline.
+ * 
+ * 75% for 12px font and 18px baseline.
+ * 
+ */
+@baseline: 100%;
+
+/* Font variables */
+@body_color: #333;
+@heading_color: #111;
+
+@body_family: "Open Sans", "Helvetica Neue", Arial, Helvetica, Sans-Serif;
+@heading_family: "Helvetica Neue", Arial, Helvetica, Sans-Serif;
+
+/* Link colors */
+@link: #6bac60;
+@link_hover: #78aace;
+
+/* Select colors */
+@select: #78aace;
+@select_color: #fff;
+
+/* Default Colors */
+@grey_light: #ddd;
+@grey_regular: #ccc;
+@grey_dark: #666;
+
+@green: #6bac60;
+
+/* ========================================================== */
+/* = Import normalize baseline and grid                    = */
+/* ========================================================== */
+
+@import "normalize.less";
+@import "baseline.less";
+@import "grid.less";
+@import lesshat;
+@import "http://fonts.googleapis.com/css?family=Glass+Antiqua";
+@import "http://fonts.googleapis.com/css?family=Habibi";
+
+/* ========================================================== */
+/* = Your custom styles go here                             = */
+/* ========================================================== */
+
+
+
+
+@sans:Helvetica,Arial,sans-serif;
+@serif:Habibi,Georgia,serif;
+@headline:"Open Sans",Courier,serif;
+
+/*colors*/
+@bg_color:#ccc;
+@yellowl:#FFF3D4;
+@yellowd:#FFE9B3;
+@greenl:#B6C9AB;
+@greend:#989D8A;
+@brown:#4F393D;
+@blue:#39464f;
+@link_color:@brown;
+
+
+/*mixins*/
+.clear
+{
+  clear:both
+}
+
+h1
+{
+  font-size:64px;
+  font-weight:700
+}
+
+h2
+{
+  font-size:48px;
+  font-weight:700
+}
+
+h3
+{
+  font-size:22px;
+  font-weight:700
+}
+
+h4
+{
+  font-size:18px;
+  font-weight:700
+}
+
+a
+{
+  color:white;
+  text-decoration:none
+}
+
+a:hover
+{
+  color:@yellowd
+}
+
+ul
+{
+  list-style-type:none
+}
+
+#topnav ul{position:fixed; top:0%;height:50px;width:100%;margin:auto auto;background-color:#252C18}
+#topnav li {width:200px;float:left; padding:10px;margin-left:10px;color:white}
+body
+{
+  font-family:@sans;
+  font-size:20px;
+  background-color:#86906B;
+}
+
+header h1{margin-top:40px;}
+
+#container {width:80%;margin:auto auto; background-color:rgba(0,0,0,.2); border-radius:10px;padding:25px; color:black}
+#container a {color:black; text-decoration:underline}
+#container a:hover {color:@yellowd}
+.productname
+{
+  font-size:24px;margin-bottom:10px;min-height:70px;
+
+}
+
+.price
+{
+  font-size:18px; margin-bottom:10px;
+}
+
+
+
+.products, .stores
+{
+  background-color:rgba(0,0,0,.5);
+  .column(5);
+  height:220px;
+  margin:25px;
+  padding:25px;
+  color:white;
+ }
+
+.category {font-size:16px; width:150px;float:left; padding:10px;margin:-105px 350px;background-color:rgba(255,255,255,.5);border-radius:5px;color:black}
+.category2 {font-size:16px; width:150px;float:left; padding:10px;margin:-50px 350px;background-color:rgba(255,255,255,.5);border-radius:5px;color:black}
+.origin {}
+
+img.beer_thumbnail {width:150px;float:left;background-color:black}
+header 
+{
+	background-color:;
+  color:rgba(0,20,0,1);
+  font-family:@headline;
+  width:800px;
+  margin:auto;
+  text-align:center;
+  padding:25px 0
+}
+
+footer
+{
+
+}
+
+footer a:hover
+{
+  color:@yellowl
+}

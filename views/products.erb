@@ -19,25 +19,15 @@
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
         <nav id="topnav">
-            <ul><li><a href="/products/">PRODUCTS</a></li><li><a href="/stores/">STORES</li><li><a href="/faq/">CREDITS</a></li>
+            <ul><li><a href="expensive">MOST EXPENSIVE</a></li><li><a href="alcoholic">MOST ALCOHOLIC</a></li><li><a href="../beercollage">BEER COLLAGE</a></li><li><a href="../index">BACK</a></li>
         </nav>
 
-        <header>
+            <header>
             <h1>
                 LCBO API
             </h1>
         </header>
         
-        <div id="container">
-        <section id="maincontent">
-            <p>This is a front-end for the <a href="http://www.lcboapi.com">LCBO API</a> running on Sinatra, built to learn JSON parsing and the basics of Sinatra routing for <a href="http://www.bitmakerlabs.com">Bitmaker Labs.</a></p>
-
-            <p>Besides the menu items, you can also do a few more neat commands:</p>
-<uL>
-            <li><a href="nearby/m5v3c9">/nearby/[postcode]</a> will give you a list of liquor stores near that location</li>
-            <li><a href="show/613497">/show/[id]</a> will allow you to directly look at any product in the LCBO by id number</li>
-        </section>
-        </div>
             
          <!--    <nav id="mainmenu">
                 <button class="navbutton"><a href="/stores/smallest">Find the smallest liquor stores in Ontario!</button>
@@ -46,8 +36,25 @@
                 <button class="navbutton">Thrill at the most alcoholic beer!</button>
             </nav> -->
             
-
-   
+            
+                <% products_array.each do |product|%>
+                <ul class="products">
+                    <li class="productname">
+                        <%= product["name"] %>
+                    </li>
+                    <li class="price">$<%= product["price_in_cents"].to_i/100.00 %>
+                    </li>
+                     <li class="origin">
+                        <%= product["origin"] %>
+                    </li>
+                    <li class="category">
+                        <%= product["primary_category"] %></li>
+                     <li class="category2"><%= product["secondary_category"] %>
+                    </li>
+                </ul>
+                <% end %>
+         
+           
             
           
 
